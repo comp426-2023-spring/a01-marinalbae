@@ -20,6 +20,7 @@ fs.readFile("./public/index.html", "utf8", (err, data) => {
 if (err) {
 	console.error(err);
 	exit(0);
+	}
 });
 
 // Define a const `server` as an arrow function using http.createServer. 
