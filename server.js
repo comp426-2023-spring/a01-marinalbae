@@ -5,7 +5,7 @@ const fs = require("fs");
 // Require minimist module (make sure you install this one via npm).
 const minimist= require("minimist");
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
-var args = process.argv.slice(2);
+var args = minimist(process.argv.slice(2));
 if (args.port == undefined) {
 	args.port = 3000;
 }
@@ -23,7 +23,7 @@ try {
   const data = fs.readFileSync("./public/index.html", "utf8");
 } catch (err) {
   	console.error(err);
-	exit(0);
+	exit(1);
 }
 
 
